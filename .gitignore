@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+# Data
+/data
+cifar5_learned_prompts.pth
+
 # Distribution / packaging
 .Python
 build/
