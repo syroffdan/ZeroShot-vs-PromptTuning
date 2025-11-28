@@ -17,3 +17,14 @@ pip install torch torchvision open_clip-torch tqdm numpy matplotlib seaborn scik
 ```bash
 python neuro_shots.py
 ```
+## Результаты
+
+| Метод | Точность | Тип  |
+|-------|----------|------|
+| Prompt Tuning | 0.94 | prompt_tuning |
+| Zero-Shot (artistic) | 0.86 | zero_shot |
+| Zero-Shot (simple) | 0.84 | zero_shot |
+| Zero-Shot (class_only) | 0.84 | zero_shot |
+| Zero-Shot (detailed) | 0.84 | zero_shot |
+| Zero-Shot (scientific) | 0.84 | zero_shot |
+| Zero-Shot (contextual) | 0.76 | zero_shot |
