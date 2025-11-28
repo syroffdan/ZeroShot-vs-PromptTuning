@@ -428,7 +428,7 @@ weights = [total_count / c for c in class_counts]
 weights = torch.tensor(weights, dtype=torch.float32, device=device)
 
 criterion = nn.CrossEntropyLoss(weight=weights)
-optimizer = optim.Adam([learned_prompts], lr=lr)
+optimizer = optim.Adam([learned_prompts], lr=lr, weight_decay=1e-4)
 
 # Цикл обучения
 print("\nЗапуск Prompt Tuning...")
@@ -501,6 +501,14 @@ for epoch in range(num_epochs):
 
     print(
         f"Epoch {epoch + 1}/{num_epochs} | Train Loss: {epoch_loss:.4f} | Train Acc: {epoch_acc:.4f} | Val Acc: {val_acc:.4f}")
+    if val_acc > best_val_acc:
+        best_val_acc = val_acc
+        patience_counter = 0
+    else:
+        patience_counter += 1
+        if patience_counter >= patience:
+            print(f"Ранняя остановка на эпохе {epoch}")
+            break
 
 # Визуализация
 
