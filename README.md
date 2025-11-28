@@ -5,6 +5,10 @@
 - **Zero-shot** CLIP с различными текстовыми шаблонами (prompts)
 - **Prompt tuning** - тонкую настройку текстовых промптов на основе 5 классов CIFAR-10 (по 50 изображений на класс)
 ## Быстрый старт
+### Клонирование репозитория
+```bash
+git clone https://github.com/syroffdan/ZeroShot-vs-PromptTuning.git
+```
 ### Установка зависимостей
 ```bash
 pip install torch torchvision open_clip-torch tqdm numpy matplotlib seaborn scikit-learn pandas
